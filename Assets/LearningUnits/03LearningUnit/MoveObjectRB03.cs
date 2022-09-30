@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//changed the mass of the red cube to make it so the it is pushed by the force mode
 public class MoveObjectRB03 : MonoBehaviour
 {
     Rigidbody rigidbody;

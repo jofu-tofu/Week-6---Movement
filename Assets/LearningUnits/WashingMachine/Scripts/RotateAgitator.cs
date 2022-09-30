@@ -3,21 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-//changes iskinematic to false
-public class MoveObjectRB05 : MonoBehaviour
+public class RotateAgitator : MonoBehaviour
 {
     Rigidbody rigidbody;
-    Vector3 moveDirection;
+    [SerializeField] Rigidbody rigidbody2;
+    
+    [SerializeField] Vector3 rotateDirection;
     // Start is called before the first frame update
     void Start()
     {
-        moveDirection = new Vector3(-2, 0,0); // Don't change this!
         rigidbody = GetComponent<Rigidbody>();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        rigidbody.AddForce(moveDirection, ForceMode.Force); // Don't change this!
+        rigidbody.AddTorque(rotateDirection, ForceMode.Force);
+        rigidbody2.angularVelocity = rigidbody.angularVelocity;
     }
 }
